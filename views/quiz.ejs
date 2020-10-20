@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">WebSiteName</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span
+                            class="caret"></span></a>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <h1>Deno With Cloud Run Quiz</h1>
+
+        <form action="/quizresult" method=post>
+            <div class="form-group">
+                <label for="uname">Q.1 What is Deno ?</label>
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" id="q1o1" value="true" name="question1">
+                    <label class="custom-control-label" for="defaultGroupExample1">Option 1</label>
+                </div>
+
+                <!-- Group of default radios - option 2 -->
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" id="q1o2"  value="false" name="question1">
+                    <label class="custom-control-label" for="defaultGroupExample2">Option 2</label>
+                </div>
+
+                <!-- Group of default radios - option 3 -->
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" id="q1o3" value="false"  name="question1">
+                    <label class="custom-control-label" for="defaultGroupExample3">Option 3</label>
+                </div>
+
+
+                <!-- Group of default radios - option 3 -->
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" id="q1o4" value="false" name="question1">
+                    <label class="custom-control-label" for="defaultGroupExample3">Option 3</label>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label for="uname">Q.2 What is Deno ?</label>
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" id="q2o1" value="false" name="question2">
+                    <label class="custom-control-label" for="defaultGroupExample1">Option 1</label>
+                </div>
+
+                <!-- Group of default radios - option 2 -->
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" id="q2o2" value="false"  name="question2">
+                    <label class="custom-control-label" for="defaultGroupExample2">Option 2</label>
+                </div>
+
+                <!-- Group of default radios - option 3 -->
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" id="q2o3" value="true" name="question2">
+                    <label class="custom-control-label" for="defaultGroupExample3">Option 3</label>
+                </div>
+
+
+                <!-- Group of default radios - option 3 -->
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" id="q2o4" value="false" name="question2">
+                    <label class="custom-control-label" for="defaultGroupExample3">Option 3</label>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label for="uname">Q.2 What is Deno ?</label>
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" id="q3o1" value="false" name="question3">
+                    <label class="custom-control-label" for="defaultGroupExample1">Option 1</label>
+                </div>
+
+                <!-- Group of default radios - option 2 -->
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" id="q3o2" value="false" name="question3">
+                    <label class="custom-control-label" for="defaultGroupExample2">Option 2</label>
+                </div>
+
+                <!-- Group of default radios - option 3 -->
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" id="q3o3" value="false" name="question3">
+                    <label class="custom-control-label" for="defaultGroupExample3">Option 3</label>
+                </div>
+
+
+                <!-- Group of default radios - option 3 -->
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" id="q3o4" value="true" name="question3">
+                    <label class="custom-control-label" for="defaultGroupExample3">Option 3</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="uname">Q.3 What is Deno ?</label>
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" value="true" id="q3o1" name="question3">
+                    <label class="custom-control-label" for="defaultGroupExample1">Option 1</label>
+                </div>
+
+                <!-- Group of default radios - option 2 -->
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" id="q3o2" value="false" name="question3">
+                    <label class="custom-control-label" for="defaultGroupExample2">Option 2</label>
+                </div>
+
+                <!-- Group of default radios - option 3 -->
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" id="q3o3" value="false" name="question3">
+                    <label class="custom-control-label" for="defaultGroupExample3">Option 3</label>
+                </div>
+
+
+                <!-- Group of default radios - option 3 -->
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" id="q3o4" value="false" name="question3">
+                    <label class="custom-control-label" for="defaultGroupExample3">Option 3</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="uname">Q.2 What is Deno ?</label>
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" id="q4o1" value="false" name="question4">
+                    <label class="custom-control-label" for="defaultGroupExample1">Option 1</label>
+                </div>
+
+                <!-- Group of default radios - option 2 -->
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" id="q4o2" value="true" name="question4">
+                    <label class="custom-control-label" for="defaultGroupExample2">Option 2</label>
+                </div>
+
+                <!-- Group of default radios - option 3 -->
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" id="q4o3" value="false" name="question4">
+                    <label class="custom-control-label" for="defaultGroupExample3">Option 3</label>
+                </div>
+
+
+                <!-- Group of default radios - option 3 -->
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" id="q4o4" value="false" name="question4">
+                    <label class="custom-control-label" for="defaultGroupExample3">Option 3</label>
+                </div>
+
+            </div>
+
+            <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
