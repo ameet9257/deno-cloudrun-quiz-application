@@ -2,174 +2,441 @@
 <html lang="en">
 
 <head>
-    <title>Bootstrap Example</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
 
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">WebSiteName</a>
-            </div>
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span
-                            class="caret"></span></a>
-            </ul>
-        </div>
-    </nav>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">WebSiteName</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span
+              class="caret"></span></a>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
 
     <div class="container">
+      <% if (foundResponse) { %>
+      <% if (totalscore < 70 ) { %>
+      <div class="alert alert-danger">
+        <h3> &#128542; You Have Scored : <%= totalscore %> % </h3>
+      </div>
+      <% } %>
 
-        <h1>Deno With Cloud Run Quiz</h1>
+      <% if (totalscore > 70 ) { %>
 
-        <form action="/quizresult" method=post>
-            <div class="form-group">
-                <label for="uname">Q.1 What is Deno ?</label>
-                <div class="custom-control custom-radio">
-                    <input type="radio" class="custom-control-input" id="q1o1" value="true" name="question1">
-                    <label class="custom-control-label" for="defaultGroupExample1">Option 1</label>
-                </div>
-
-                <!-- Group of default radios - option 2 -->
-                <div class="custom-control custom-radio">
-                    <input type="radio" class="custom-control-input" id="q1o2"  value="false" name="question1">
-                    <label class="custom-control-label" for="defaultGroupExample2">Option 2</label>
-                </div>
-
-                <!-- Group of default radios - option 3 -->
-                <div class="custom-control custom-radio">
-                    <input type="radio" class="custom-control-input" id="q1o3" value="false"  name="question1">
-                    <label class="custom-control-label" for="defaultGroupExample3">Option 3</label>
-                </div>
-
-
-                <!-- Group of default radios - option 3 -->
-                <div class="custom-control custom-radio">
-                    <input type="radio" class="custom-control-input" id="q1o4" value="false" name="question1">
-                    <label class="custom-control-label" for="defaultGroupExample3">Option 3</label>
-                </div>
-
-            </div>
-
-            <div class="form-group">
-                <label for="uname">Q.2 What is Deno ?</label>
-                <div class="custom-control custom-radio">
-                    <input type="radio" class="custom-control-input" id="q2o1" value="false" name="question2">
-                    <label class="custom-control-label" for="defaultGroupExample1">Option 1</label>
-                </div>
-
-                <!-- Group of default radios - option 2 -->
-                <div class="custom-control custom-radio">
-                    <input type="radio" class="custom-control-input" id="q2o2" value="false"  name="question2">
-                    <label class="custom-control-label" for="defaultGroupExample2">Option 2</label>
-                </div>
-
-                <!-- Group of default radios - option 3 -->
-                <div class="custom-control custom-radio">
-                    <input type="radio" class="custom-control-input" id="q2o3" value="true" name="question2">
-                    <label class="custom-control-label" for="defaultGroupExample3">Option 3</label>
-                </div>
-
-
-                <!-- Group of default radios - option 3 -->
-                <div class="custom-control custom-radio">
-                    <input type="radio" class="custom-control-input" id="q2o4" value="false" name="question2">
-                    <label class="custom-control-label" for="defaultGroupExample3">Option 3</label>
-                </div>
-
-            </div>
-
-            <div class="form-group">
-                <label for="uname">Q.2 What is Deno ?</label>
-                <div class="custom-control custom-radio">
-                    <input type="radio" class="custom-control-input" id="q3o1" value="false" name="question3">
-                    <label class="custom-control-label" for="defaultGroupExample1">Option 1</label>
-                </div>
-
-                <!-- Group of default radios - option 2 -->
-                <div class="custom-control custom-radio">
-                    <input type="radio" class="custom-control-input" id="q3o2" value="false" name="question3">
-                    <label class="custom-control-label" for="defaultGroupExample2">Option 2</label>
-                </div>
-
-                <!-- Group of default radios - option 3 -->
-                <div class="custom-control custom-radio">
-                    <input type="radio" class="custom-control-input" id="q3o3" value="false" name="question3">
-                    <label class="custom-control-label" for="defaultGroupExample3">Option 3</label>
-                </div>
-
-
-                <!-- Group of default radios - option 3 -->
-                <div class="custom-control custom-radio">
-                    <input type="radio" class="custom-control-input" id="q3o4" value="true" name="question3">
-                    <label class="custom-control-label" for="defaultGroupExample3">Option 3</label>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="uname">Q.3 What is Deno ?</label>
-                <div class="custom-control custom-radio">
-                    <input type="radio" class="custom-control-input" value="true" id="q3o1" name="question3">
-                    <label class="custom-control-label" for="defaultGroupExample1">Option 1</label>
-                </div>
-
-                <!-- Group of default radios - option 2 -->
-                <div class="custom-control custom-radio">
-                    <input type="radio" class="custom-control-input" id="q3o2" value="false" name="question3">
-                    <label class="custom-control-label" for="defaultGroupExample2">Option 2</label>
-                </div>
-
-                <!-- Group of default radios - option 3 -->
-                <div class="custom-control custom-radio">
-                    <input type="radio" class="custom-control-input" id="q3o3" value="false" name="question3">
-                    <label class="custom-control-label" for="defaultGroupExample3">Option 3</label>
-                </div>
-
-
-                <!-- Group of default radios - option 3 -->
-                <div class="custom-control custom-radio">
-                    <input type="radio" class="custom-control-input" id="q3o4" value="false" name="question3">
-                    <label class="custom-control-label" for="defaultGroupExample3">Option 3</label>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="uname">Q.2 What is Deno ?</label>
-                <div class="custom-control custom-radio">
-                    <input type="radio" class="custom-control-input" id="q4o1" value="false" name="question4">
-                    <label class="custom-control-label" for="defaultGroupExample1">Option 1</label>
-                </div>
-
-                <!-- Group of default radios - option 2 -->
-                <div class="custom-control custom-radio">
-                    <input type="radio" class="custom-control-input" id="q4o2" value="true" name="question4">
-                    <label class="custom-control-label" for="defaultGroupExample2">Option 2</label>
-                </div>
-
-                <!-- Group of default radios - option 3 -->
-                <div class="custom-control custom-radio">
-                    <input type="radio" class="custom-control-input" id="q4o3" value="false" name="question4">
-                    <label class="custom-control-label" for="defaultGroupExample3">Option 3</label>
-                </div>
-
-
-                <!-- Group of default radios - option 3 -->
-                <div class="custom-control custom-radio">
-                    <input type="radio" class="custom-control-input" id="q4o4" value="false" name="question4">
-                    <label class="custom-control-label" for="defaultGroupExample3">Option 3</label>
-                </div>
-
-            </div>
-
-            <button type="submit" class="btn btn-success">Submit</button>
-        </form>
+      <div class="alert alert-success" role="alert">
+        <h3> &#128522; You Have Scored : <%= totalscore %> % </h3>
+      </div>
+      <% } %>
+      <% } %>
     </div>
+
+    <h1>Deno With Cloud Run Quiz</h1>
+    <form action="/quiz" method=post>
+      <div class="form-group">
+        <label for="uname">Q.1 What is Deno ?</label>
+        <div class="custom-control custom-radio">
+          <input type="radio" class="custom-control-input" id="q1o1" value="correct1" name="question1" required
+            <% if (q1ans == "correct1") { %> <%= pressRadio %> <% } %>>
+          <label class="custom-control-label" for="defaultGroupExample1">Option 1
+
+            <% if (foundResponse) { %>
+            <img src="https://www.iconsdb.com/icons/preview/green/ok-xxl.png" class="rounded-circle" alt="Cinque Terre"
+              width="18" height="18">
+            <% } %>
+
+          </label>
+        </div>
+
+        <!-- Group of default radios - option 2 -->
+        <div class="custom-control custom-radio">
+          <input type="radio" class="custom-control-input" id="q1o2" value="incorrect2" name="question1"
+            <% if (q1ans == "incorrect2") { %> <%= pressRadio %> <% } %>>
+          <label class="custom-control-label" for="defaultGroupExample2">Option 2
+          </label>
+        </div>
+
+        <!-- Group of default radios - option 3 -->
+        <div class="custom-control custom-radio">
+          <input type="radio" class="custom-control-input" id="q1o3" value="incorrect3" name="question1"
+            <% if (q1ans == "incorrect3") { %> <%= pressRadio %> <% } %>>
+          <label class="custom-control-label" for="defaultGroupExample3">Option 3</label>
+        </div>
+
+
+        <!-- Group of default radios - option 3 -->
+        <div class="custom-control custom-radio">
+          <input type="radio" class="custom-control-input" id="q1o4" value="incorrect4" name="question1"
+            <% if (q1ans == "incorrect4") { %> <%= pressRadio %> <% } %>>
+          <label class="custom-control-label" for="defaultGroupExample3">Option 3</label>
+        </div>
+
+      </div>
+
+      <div class="form-group">
+        <label for="uname">Q.2 What is Deno ?</label>
+        <div class="custom-control custom-radio">
+          <input type="radio" class="custom-control-input" id="q2o1" value="incorrect1" name="question2" required
+            <% if (q2ans == "incorrect1") { %> <%= pressRadio %> <% } %>>
+          <label class="custom-control-label" for="defaultGroupExample1">Option 1</label>
+        </div>
+
+        <!-- Group of default radios - option 2 -->
+        <div class="custom-control custom-radio">
+          <input type="radio" class="custom-control-input" id="q2o2" value="incorrect2" name="question2"
+            <% if (q2ans == "incorrect2") { %> <%= pressRadio %> <% } %>>
+          <label class="custom-control-label" for="defaultGroupExample2">Option 2</label>
+        </div>
+
+        <!-- Group of default radios - option 3 -->
+        <div class="custom-control custom-radio">
+          <input type="radio" class="custom-control-input" id="q2o3" value="incorrect3" name="question2"
+            <% if (q2ans == "incorrect3") { %> <%= pressRadio %> <% } %>>
+          <label class="custom-control-label" for="defaultGroupExample3">Option 3</label>
+        </div>
+
+
+        <!-- Group of default radios - option 3 -->
+        <div class="custom-control custom-radio">
+          <input type="radio" class="custom-control-input" id="q2o4" value="correct1" name="question2"
+            <% if (q2ans == "correct1") { %> <%= pressRadio %> <% } %>>
+          <label class="custom-control-label" for="defaultGroupExample3">Option 3
+
+            <% if (foundResponse) { %>
+            <img src="https://www.iconsdb.com/icons/preview/green/ok-xxl.png" class="rounded-circle" alt="Cinque Terre"
+              width="18" height="18">
+            <% } %>
+
+          </label>
+        </div>
+
+      </div>
+
+      <div class="form-group">
+        <label for="uname">Q.3 What is Deno ?</label>
+        <div class="custom-control custom-radio">
+          <input type="radio" class="custom-control-input" id="q3o1" value="incorrect1" name="question3" required
+            <% if (q3ans == "incorrect1") { %> <%= pressRadio %> <% } %>>
+          <label class="custom-control-label" for="defaultGroupExample1">Option 1</label>
+        </div>
+
+        <!-- Group of default radios - option 2 -->
+        <div class="custom-control custom-radio">
+          <input type="radio" class="custom-control-input" id="q3o2" value="incorrect2" name="question3"
+            <% if (q3ans == "incorrect2") { %> <%= pressRadio %> <% } %>>
+          <label class="custom-control-label" for="defaultGroupExample2">Option 2</label>
+        </div>
+
+        <!-- Group of default radios - option 3 -->
+        <div class="custom-control custom-radio">
+          <input type="radio" class="custom-control-input" id="q3o3" value="correct1" name="question3"
+            <% if (q3ans == "correct1") { %> <%= pressRadio %> <% } %>>
+          <label class="custom-control-label" for="defaultGroupExample3">Option 3
+            <% if (foundResponse) { %>
+            <img src="https://www.iconsdb.com/icons/preview/green/ok-xxl.png" class="rounded-circle" alt="Cinque Terre"
+              width="18" height="18">
+            <% } %>
+
+          </label>
+        </div>
+
+
+        <!-- Group of default radios - option 3 -->
+        <div class="custom-control custom-radio">
+          <input type="radio" class="custom-control-input" id="q304" value="incorrect3" name="question3"
+            <% if (q3ans == "incorrect3") { %> <%= pressRadio %> <% } %>>
+          <label class="custom-control-label" for="defaultGroupExample3">Option 3</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="uname">Q.4 What is Deno ?</label>
+        <div class="custom-control custom-radio">
+          <input type="radio" class="custom-control-input" value="correct1" id="q4o1" name="question4" required
+            <% if (q4ans == "correct1") { %> <%= pressRadio %> <% } %>>
+          <label class="custom-control-label" for="defaultGroupExample1">Option 1
+
+            <% if (foundResponse) { %>
+            <img src="https://www.iconsdb.com/icons/preview/green/ok-xxl.png" class="rounded-circle" alt="Cinque Terre"
+              width="18" height="18">
+            <% } %>
+
+          </label>
+        </div>
+
+        <!-- Group of default radios - option 2 -->
+        <div class="custom-control custom-radio">
+          <input type="radio" class="custom-control-input" id="q402" value="incorrect1" name="question4"
+            <% if (q4ans == "incorrect1") { %> <%= pressRadio %> <% } %>>
+          <label class="custom-control-label" for="defaultGroupExample2">Option 2</label>
+        </div>
+
+        <!-- Group of default radios - option 3 -->
+        <div class="custom-control custom-radio">
+          <input type="radio" class="custom-control-input" id="q4o3" value="incorrect2" name="question4"
+            <% if (q4ans == "incorrect2") { %> <%= pressRadio %> <% } %>>
+          <label class="custom-control-label" for="defaultGroupExample3">Option 3</label>
+        </div>
+
+
+        <!-- Group of default radios - option 3 -->
+        <div class="custom-control custom-radio">
+          <input type="radio" class="custom-control-input" id="q4o4" value="incorrect3" name="question4"
+            <% if (q4ans == "incorrect3") { %> <%= pressRadio %> <% } %>>
+          <label class="custom-control-label" for="defaultGroupExample3">Option 3</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="uname">Q.5 What is Deno ?</label>
+        <div class="custom-control custom-radio">
+          <input type="radio" class="custom-control-input" id="q5o1" value="incorrect1" name="question5" required
+            <% if (q5ans == "incorrect1") { %> <%= pressRadio %> <% } %>>
+          <label class="custom-control-label" for="defaultGroupExample1">Option 1</label>
+        </div>
+
+        <!-- Group of default radios - option 2 -->
+        <div class="custom-control custom-radio">
+          <input type="radio" class="custom-control-input" id="q5o2" value="correct1" name="question5"
+            <% if (q5ans == "correct1") { %> <%= pressRadio %> <% } %>>
+          <label class="custom-control-label" for="defaultGroupExample2">Option 2
+
+            <% if (foundResponse) { %>
+            <img src="https://www.iconsdb.com/icons/preview/green/ok-xxl.png" class="rounded-circle" alt="Cinque Terre"
+              width="18" height="18">
+            <% } %>
+
+          </label>
+        </div>
+
+        <!-- Group of default radios - option 3 -->
+        <div class="custom-control custom-radio">
+          <input type="radio" class="custom-control-input" id="q5o3" value="incorrect2" name="question5"
+            <% if (q5ans == "incorrect2") { %> <%= pressRadio %> <% } %>>
+          <label class="custom-control-label" for="defaultGroupExample3">Option 3</label>
+        </div>
+
+
+        <!-- Group of default radios - option 3 -->
+        <div class="custom-control custom-radio">
+          <input type="radio" class="custom-control-input" id="q5o4" value="incorrect3" name="question5"
+            <% if (q5ans == "incorrect3") { %> <%= pressRadio %> <% } %>>
+          <label class="custom-control-label" for="defaultGroupExample3">Option 3</label>
+        </div>
+
+      </div>
+
+      <div class="form-group">
+        <label for="uname">Q.6 What is Deno ?</label>
+        <div class="custom-control custom-radio">
+          <input type="radio" class="custom-control-input" id="q6o1" value="incorrect1" name="question6" required
+            <% if (q6ans == "incorrect1") { %> <%= pressRadio %> <% } %>>
+          <label class="custom-control-label" for="defaultGroupExample1">Option 1</label>
+        </div>
+
+        <!-- Group of default radios - option 2 -->
+        <div class="custom-control custom-radio">
+          <input type="radio" class="custom-control-input" id="q6o2" value="incorrect2" name="question6"
+            <% if (q6ans == "incorrect2") { %> <%= pressRadio %> <% } %>>
+          <label class="custom-control-label" for="defaultGroupExample2">Option 2</label>
+        </div>
+
+        <!-- Group of default radios - option 3 -->
+        <div class="custom-control custom-radio">
+          <input type="radio" class="custom-control-input" id="q6o3" value="correct1" name="question6"
+            <% if (q6ans == "correct1") { %> <%= pressRadio %> <% } %>>
+          <label class="custom-control-label" for="defaultGroupExample3">Option 3
+
+            <% if (foundResponse) { %>
+            <img src="https://www.iconsdb.com/icons/preview/green/ok-xxl.png" class="rounded-circle" alt="Cinque Terre"
+              width="18" height="18">
+            <% } %>
+
+          </label>
+        </div>
+
+
+        <!-- Group of default radios - option 3 -->
+        <div class="custom-control custom-radio">
+          <input type="radio" class="custom-control-input" id="q6o4" value="incorrect3" name="question6"
+            <% if (q6ans == "incorrect3") { %> <%= pressRadio %> <% } %>>
+          <label class="custom-control-label" for="defaultGroupExample3">Option 3</label>
+        </div>
+
+      </div>
+
+      <div class="form-group">
+        <label for="uname">Q.7 What is Deno ?</label>
+        <div class="custom-control custom-radio">
+          <input type="radio" class="custom-control-input" id="q7o1" value="correct1" name="question7" required
+            <% if (q7ans == "correct1") { %> <%= pressRadio %> <% } %>>
+          <label class="custom-control-label" for="defaultGroupExample1">Option 1
+
+            <% if (foundResponse) { %>
+            <img src="https://www.iconsdb.com/icons/preview/green/ok-xxl.png" class="rounded-circle" alt="Cinque Terre"
+              width="18" height="18">
+            <% } %>
+
+          </label>
+        </div>
+
+        <!-- Group of default radios - option 2 -->
+        <div class="custom-control custom-radio">
+          <input type="radio" class="custom-control-input" id="q7o2" value="incorrect1" name="question7"
+            <% if (q7ans == "incorrect1") { %> <%= pressRadio %> <% } %>>
+          <label class="custom-control-label" for="defaultGroupExample2">Option 2</label>
+        </div>
+
+        <!-- Group of default radios - option 3 -->
+        <div class="custom-control custom-radio">
+          <input type="radio" class="custom-control-input" id="q7o3" value="incorrect2" name="question7"
+            <% if (q7ans == "incorrect2") { %> <%= pressRadio %> <% } %>>
+          <label class="custom-control-label" for="defaultGroupExample3">Option 3</label>
+        </div>
+
+
+        <!-- Group of default radios - option 3 -->
+        <div class="custom-control custom-radio">
+          <input type="radio" class="custom-control-input" id="q7o4" value="incorrect3" name="question7"
+            <% if (q7ans == "incorrect3") { %> <%= pressRadio %> <% } %>>
+          <label class="custom-control-label" for="defaultGroupExample3">Option 3</label>
+        </div>
+
+      </div>
+
+      <div class="form-group">
+        <label for="uname">Q.5 What is Deno ?</label>
+        <div class="custom-control custom-radio">
+          <input type="radio" class="custom-control-input" id="q5o1" value="incorrect1" name="question8" required
+            <% if (q8ans == "incorrect1") { %> <%= pressRadio %> <% } %>>
+          <label class="custom-control-label" for="defaultGroupExample1">Option 1</label>
+        </div>
+
+        <!-- Group of default radios - option 2 -->
+        <div class="custom-control custom-radio">
+          <input type="radio" class="custom-control-input" id="q5o2" value="incorrect2" name="question8"
+            <% if (q8ans == "incorrect2") { %> <%= pressRadio %> <% } %>>
+          <label class="custom-control-label" for="defaultGroupExample2">Option 2</label>
+        </div>
+
+        <!-- Group of default radios - option 3 -->
+        <div class="custom-control custom-radio">
+          <input type="radio" class="custom-control-input" id="q5o3" value="incorrect3" name="question8"
+            <% if (q8ans == "incorrect3") { %> <%= pressRadio %> <% } %>>
+          <label class="custom-control-label" for="defaultGroupExample3">Option 3</label>
+        </div>
+
+
+        <!-- Group of default radios - option 3 -->
+        <div class="custom-control custom-radio">
+          <input type="radio" class="custom-control-input" id="q5o4" value="correct1" name="question8"
+            <% if (q8ans == "correct1") { %> <%= pressRadio %> <% } %>>
+          <label class="custom-control-label" for="defaultGroupExample3">Option 3
+
+            <% if (foundResponse) { %>
+            <img src="https://www.iconsdb.com/icons/preview/green/ok-xxl.png" class="rounded-circle" alt="Cinque Terre"
+              width="18" height="18">
+            <% } %>
+
+          </label>
+        </div>
+
+      </div>
+
+      <div class="form-group">
+        <label for="uname">Q.5 What is Deno ?</label>
+        <div class="custom-control custom-radio">
+          <input type="radio" class="custom-control-input" id="q9o1" value="incorrect1" name="question9" required
+            <% if (q9ans == "incorrect1") { %> <%= pressRadio %> <% } %>>
+          <label class="custom-control-label" for="defaultGroupExample1">Option 1</label>
+        </div>
+
+        <!-- Group of default radios - option 2 -->
+        <div class="custom-control custom-radio">
+          <input type="radio" class="custom-control-input" id="q9o2" value="incorrect2" name="question9"
+            <% if (q9ans == "incorrect2") { %> <%= pressRadio %> <% } %>>
+          <label class="custom-control-label" for="defaultGroupExample2">Option 2</label>
+        </div>
+
+        <!-- Group of default radios - option 3 -->
+        <div class="custom-control custom-radio">
+          <input type="radio" class="custom-control-input" id="q9o3" value="correct1" name="question9"
+            <% if (q9ans == "correct1") { %> <%= pressRadio %> <% } %>>
+          <label class="custom-control-label" for="defaultGroupExample3">Option 3
+
+            <% if (foundResponse) { %>
+            <img src="https://www.iconsdb.com/icons/preview/green/ok-xxl.png" class="rounded-circle" alt="Cinque Terre"
+              width="18" height="18">
+            <% } %>
+
+          </label>
+        </div>
+
+
+        <!-- Group of default radios - option 3 -->
+        <div class="custom-control custom-radio">
+          <input type="radio" class="custom-control-input" id="q9o4" value="incorrect3" name="question9"
+            <% if (q9ans == "incorrect3") { %> <%= pressRadio %> <% } %>>
+          <label class="custom-control-label" for="defaultGroupExample3">Option 3</label>
+        </div>
+
+      </div>
+
+      <div class="form-group">
+        <label for="uname">Q.10 What is Deno ?</label>
+        <div class="custom-control custom-radio">
+          <input type="radio" class="custom-control-input" id="q5o1" value="false" name="question10" required
+            <% if (q10ans == "incorrect1") { %> <%= pressRadio %> <% } %>>
+          <label class="custom-control-label" for="defaultGroupExample1">Option 1</label>
+        </div>
+
+        <!-- Group of default radios - option 2 -->
+        <div class="custom-control custom-radio">
+          <input type="radio" class="custom-control-input" id="q5o2" value="correct1" name="question10"
+            <% if (q10ans == "correct1") { %> <%= pressRadio %> <% } %>>
+          <label class="custom-control-label" for="defaultGroupExample2">Option 2
+
+            <% if (foundResponse) { %>
+            <img src="https://www.iconsdb.com/icons/preview/green/ok-xxl.png" class="rounded-circle" alt="Cinque Terre"
+              width="18" height="18">
+            <% } %>
+
+          </label>
+        </div>
+
+        <!-- Group of default radios - option 3 -->
+        <div class="custom-control custom-radio">
+          <input type="radio" class="custom-control-input" id="q5o3" value="incorrect2" name="question10"
+            <% if (q10ans == "incorrect2") { %> <%= pressRadio %> <% } %>>
+          <label class="custom-control-label" for="defaultGroupExample3">Option 3</label>
+        </div>
+
+
+        <!-- Group of default radios - option 3 -->
+        <div class="custom-control custom-radio">
+          <input type="radio" class="custom-control-input" id="q5o4" value="incorrect3" name="question10"
+            <% if (q10ans == "incorrect3") { %> <%= pressRadio %> <% } %>>
+          <label class="custom-control-label" for="defaultGroupExample3">Option 3</label>
+        </div>
+
+      </div>
+
+      <button type="submit" class="btn btn-success" <% if (foundResponse) { %> <%= disButton %> <% } %>>Submit</button>
+    </form>
+  </div>
 </body>
+
 </html>
