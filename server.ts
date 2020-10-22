@@ -8,7 +8,6 @@ const router = new Router();
 
 router
   .get("/", home)
-  .get("/quiz",quiz)
   .post("/quiz",postquizresult)
 
 app.addEventListener('error', evt => {
