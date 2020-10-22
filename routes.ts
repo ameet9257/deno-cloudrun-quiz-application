@@ -3,7 +3,7 @@ import { renderFileToString } from "https://deno.land/x/dejs@0.7.0/mod.ts";
 import {answers , Answer} from "./answer.ts";
 
 
-export const home = async (ctx: RouterContext) => {
+export var home = async (ctx: RouterContext) => {
     const currentUser = ctx.state.currentUser;
     const getValue = answers.find((a:Answer) => (a.check === 1));
     if(getValue){
@@ -42,7 +42,7 @@ export const home = async (ctx: RouterContext) => {
     }else{
         console.log("Home")
         ctx.response.body = await renderFileToString(`${Deno.cwd()}/views/quiz.ejs`, {
-            user: currentUser,
+            //user: currentUser,
             q1a1: false,
             q1ans : false,
             q2ans : false,
@@ -62,13 +62,13 @@ export const home = async (ctx: RouterContext) => {
     }
 }
 
-export const quiz = async (ctx: RouterContext) => {
+export var quiz = async (ctx: RouterContext) => {
     console.log("quiz")
     ctx.response.body = await renderFileToString(`${Deno.cwd()}/views/quiz.ejs`, {
     });
 }
 
-export const postquizresult = async (ctx: RouterContext) => {
+export var postquizresult = async (ctx: RouterContext) => {
     
     const check = 1;
     
