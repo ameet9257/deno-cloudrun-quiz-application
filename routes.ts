@@ -1,6 +1,5 @@
 import { RouterContext } from "https://deno.land/x/oak@v5.0.0/mod.ts";
 import { renderFileToString } from "https://deno.land/x/dejs@0.7.0/mod.ts";
-import {answers , Answer} from "./answer.ts";
 
 
 export let home = async (ctx: RouterContext) => {
