@@ -5,24 +5,33 @@
   <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 
 <body>
 
-  <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#">GM Code Camp 8.0</a>
-      </div>
-    </div>
+
+  <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+    <ul class="navbar-nav">
+      <li class="navbar-brand">
+          <b>GM Code Camp 8.0</b>
+      </li>
+    </ul>
+
+    <!-- Links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="quiz.ejs">Home</a>
+      </li>
+    </ul>
   </nav>
+  
+  <div class="container pt-3">
 
-  <div class="container">
-
-    <div class="container">
+    <div class="container" style="margin-top: 5%;">
       <% if (foundResponse) { %>
       <% if (totalscore < 70 ) { %>
       <div class="alert alert-danger">
@@ -41,15 +50,15 @@
 
     <h1>Deno With Cloud Run Quiz</h1>
     <form action="/quiz" method=post>
-      <div class="form-group">
-        <label for="uname">Q.1 What is Deno ?</label>
+      <div class="form-group" >
+        <label for="uname" style="margin-top: 2%;">Q.1 Deno is based on which Javascript Engine?</label>
         <div class="custom-control custom-radio">
           <input type="radio" class="custom-control-input" id="q1o1" value="correct1" name="question1" required
             <% if (q1ans == "correct1") { %> <%= pressRadio %> <% } %>>
-          <label class="custom-control-label" for="defaultGroupExample1">Option 1
+          <label class="custom-control-label" for="q1o1">V8 from Google
 
             <% if (foundResponse) { %>
-              ✅
+            ✅
             <% } %>
 
           </label>
@@ -59,7 +68,7 @@
         <div class="custom-control custom-radio">
           <input type="radio" class="custom-control-input" id="q1o2" value="incorrect2" name="question1"
             <% if (q1ans == "incorrect2") { %> <%= pressRadio %> <% } %>>
-          <label class="custom-control-label" for="defaultGroupExample2">Option 2
+          <label class="custom-control-label" for="q1o2">SpiderMonkey
           </label>
         </div>
 
@@ -67,7 +76,7 @@
         <div class="custom-control custom-radio">
           <input type="radio" class="custom-control-input" id="q1o3" value="incorrect3" name="question1"
             <% if (q1ans == "incorrect3") { %> <%= pressRadio %> <% } %>>
-          <label class="custom-control-label" for="defaultGroupExample3">Option 3</label>
+          <label class="custom-control-label" for="q1o3">JavaScriptCore</label>
         </div>
 
 
@@ -75,31 +84,31 @@
         <div class="custom-control custom-radio">
           <input type="radio" class="custom-control-input" id="q1o4" value="incorrect4" name="question1"
             <% if (q1ans == "incorrect4") { %> <%= pressRadio %> <% } %>>
-          <label class="custom-control-label" for="defaultGroupExample3">Option 3</label>
+          <label class="custom-control-label" for="q1o4">Chakra</label>
         </div>
 
       </div>
 
       <div class="form-group">
-        <label for="uname">Q.2 What is Deno ?</label>
+        <label for="uname " style="margin-top: 1%;">Q.2 Cloud Run is a platform which is?</label>
         <div class="custom-control custom-radio">
           <input type="radio" class="custom-control-input" id="q2o1" value="incorrect1" name="question2" required
             <% if (q2ans == "incorrect1") { %> <%= pressRadio %> <% } %>>
-          <label class="custom-control-label" for="defaultGroupExample1">Option 1</label>
+          <label class="custom-control-label" for="q2o1">None of the above</label>
         </div>
 
         <!-- Group of default radios - option 2 -->
         <div class="custom-control custom-radio">
           <input type="radio" class="custom-control-input" id="q2o2" value="incorrect2" name="question2"
             <% if (q2ans == "incorrect2") { %> <%= pressRadio %> <% } %>>
-          <label class="custom-control-label" for="defaultGroupExample2">Option 2</label>
+          <label class="custom-control-label" for="q2o2">On-Prem Managed server platform</label>
         </div>
 
         <!-- Group of default radios - option 3 -->
         <div class="custom-control custom-radio">
           <input type="radio" class="custom-control-input" id="q2o3" value="incorrect3" name="question2"
             <% if (q2ans == "incorrect3") { %> <%= pressRadio %> <% } %>>
-          <label class="custom-control-label" for="defaultGroupExample3">Option 3</label>
+          <label class="custom-control-label" for="q2o3">Partially Managed serverless platform</label>
         </div>
 
 
@@ -107,7 +116,7 @@
         <div class="custom-control custom-radio">
           <input type="radio" class="custom-control-input" id="q2o4" value="correct1" name="question2"
             <% if (q2ans == "correct1") { %> <%= pressRadio %> <% } %>>
-          <label class="custom-control-label" for="defaultGroupExample3">Option 3
+          <label class="custom-control-label" for="q2o4">Fully Managed serverless platform
 
             <% if (foundResponse) { %>
             ✅
@@ -119,47 +128,33 @@
       </div>
 
       <div class="form-group">
-        <label for="uname">Q.3 What is Deno ?</label>
+        <label for="uname" style="margin-top: 1%;">Q.3 Deno gives you High Security as compared to Node?</label>
+
         <div class="custom-control custom-radio">
           <input type="radio" class="custom-control-input" id="q3o1" value="incorrect1" name="question3" required
             <% if (q3ans == "incorrect1") { %> <%= pressRadio %> <% } %>>
-          <label class="custom-control-label" for="defaultGroupExample1">Option 1</label>
-        </div>
-
-        <!-- Group of default radios - option 2 -->
-        <div class="custom-control custom-radio">
-          <input type="radio" class="custom-control-input" id="q3o2" value="incorrect2" name="question3"
-            <% if (q3ans == "incorrect2") { %> <%= pressRadio %> <% } %>>
-          <label class="custom-control-label" for="defaultGroupExample2">Option 2</label>
+          <label class="custom-control-label" for="q3o1">False</label>
         </div>
 
         <!-- Group of default radios - option 3 -->
         <div class="custom-control custom-radio">
-          <input type="radio" class="custom-control-input" id="q3o3" value="correct1" name="question3"
+          <input type="radio" class="custom-control-input" id="q3o2" value="correct1" name="question3"
             <% if (q3ans == "correct1") { %> <%= pressRadio %> <% } %>>
-          <label class="custom-control-label" for="defaultGroupExample3">Option 3
+          <label class="custom-control-label" for="q3o2">True
             <% if (foundResponse) { %>
             ✅
             <% } %>
 
           </label>
         </div>
-
-
-        <!-- Group of default radios - option 3 -->
-        <div class="custom-control custom-radio">
-          <input type="radio" class="custom-control-input" id="q304" value="incorrect3" name="question3"
-            <% if (q3ans == "incorrect3") { %> <%= pressRadio %> <% } %>>
-          <label class="custom-control-label" for="defaultGroupExample3">Option 3</label>
-        </div>
       </div>
 
       <div class="form-group">
-        <label for="uname">Q.4 What is Deno ?</label>
+        <label for="uname" style="margin-top: 1%;">Q.4 Cloud Function is?</label>
         <div class="custom-control custom-radio">
           <input type="radio" class="custom-control-input" value="correct1" id="q4o1" name="question4" required
             <% if (q4ans == "correct1") { %> <%= pressRadio %> <% } %>>
-          <label class="custom-control-label" for="defaultGroupExample1">Option 1
+          <label class="custom-control-label" for="q4o1">Function as a Service (FaaS)
 
             <% if (foundResponse) { %>
             ✅
@@ -172,14 +167,14 @@
         <div class="custom-control custom-radio">
           <input type="radio" class="custom-control-input" id="q402" value="incorrect1" name="question4"
             <% if (q4ans == "incorrect1") { %> <%= pressRadio %> <% } %>>
-          <label class="custom-control-label" for="defaultGroupExample2">Option 2</label>
+          <label class="custom-control-label" for="q402">Platform as a Service (PaaS)</label>
         </div>
 
         <!-- Group of default radios - option 3 -->
         <div class="custom-control custom-radio">
           <input type="radio" class="custom-control-input" id="q4o3" value="incorrect2" name="question4"
             <% if (q4ans == "incorrect2") { %> <%= pressRadio %> <% } %>>
-          <label class="custom-control-label" for="defaultGroupExample3">Option 3</label>
+          <label class="custom-control-label" for="q4o3">Infrastructure as a Service (IaaS)</label>
         </div>
 
 
@@ -187,23 +182,23 @@
         <div class="custom-control custom-radio">
           <input type="radio" class="custom-control-input" id="q4o4" value="incorrect3" name="question4"
             <% if (q4ans == "incorrect3") { %> <%= pressRadio %> <% } %>>
-          <label class="custom-control-label" for="defaultGroupExample3">Option 3</label>
+          <label class="custom-control-label" for="q4o4">Software as a Service (SaaS)</label>
         </div>
       </div>
 
       <div class="form-group">
-        <label for="uname">Q.5 What is Deno ?</label>
+        <label for="uname" style="margin-top: 1%;">Q.5 Cloud Run supports?</label>
         <div class="custom-control custom-radio">
           <input type="radio" class="custom-control-input" id="q5o1" value="incorrect1" name="question5" required
             <% if (q5ans == "incorrect1") { %> <%= pressRadio %> <% } %>>
-          <label class="custom-control-label" for="defaultGroupExample1">Option 1</label>
+          <label class="custom-control-label" for="q5o1">Go language</label>
         </div>
 
         <!-- Group of default radios - option 2 -->
         <div class="custom-control custom-radio">
           <input type="radio" class="custom-control-input" id="q5o2" value="correct1" name="question5"
             <% if (q5ans == "correct1") { %> <%= pressRadio %> <% } %>>
-          <label class="custom-control-label" for="defaultGroupExample2">Option 2
+          <label class="custom-control-label" for="q5o2">Any language, any library, any binary
 
             <% if (foundResponse) { %>
             ✅
@@ -216,7 +211,7 @@
         <div class="custom-control custom-radio">
           <input type="radio" class="custom-control-input" id="q5o3" value="incorrect2" name="question5"
             <% if (q5ans == "incorrect2") { %> <%= pressRadio %> <% } %>>
-          <label class="custom-control-label" for="defaultGroupExample3">Option 3</label>
+          <label class="custom-control-label" for="q5o3">Deno Language</label>
         </div>
 
 
@@ -224,31 +219,32 @@
         <div class="custom-control custom-radio">
           <input type="radio" class="custom-control-input" id="q5o4" value="incorrect3" name="question5"
             <% if (q5ans == "incorrect3") { %> <%= pressRadio %> <% } %>>
-          <label class="custom-control-label" for="defaultGroupExample3">Option 3</label>
+          <label class="custom-control-label" for="q5o4">python Language</label>
         </div>
 
       </div>
 
       <div class="form-group">
-        <label for="uname">Q.6 What is Deno ?</label>
+        <label for="uname" style="margin-top: 1%;">Q.6 What is the main big advantage of TypeScript over JavaScript?</label>
         <div class="custom-control custom-radio">
           <input type="radio" class="custom-control-input" id="q6o1" value="incorrect1" name="question6" required
             <% if (q6ans == "incorrect1") { %> <%= pressRadio %> <% } %>>
-          <label class="custom-control-label" for="defaultGroupExample1">Option 1</label>
+          <label class="custom-control-label" for="q6o1">It's Platform Independent</label>
         </div>
 
         <!-- Group of default radios - option 2 -->
         <div class="custom-control custom-radio">
           <input type="radio" class="custom-control-input" id="q6o2" value="incorrect2" name="question6"
             <% if (q6ans == "incorrect2") { %> <%= pressRadio %> <% } %>>
-          <label class="custom-control-label" for="defaultGroupExample2">Option 2</label>
+          <label class="custom-control-label" for="q6o2">Generating HTML Content </label>
         </div>
 
         <!-- Group of default radios - option 3 -->
         <div class="custom-control custom-radio">
           <input type="radio" class="custom-control-input" id="q6o3" value="correct1" name="question6"
             <% if (q6ans == "correct1") { %> <%= pressRadio %> <% } %>>
-          <label class="custom-control-label" for="defaultGroupExample3">Option 3
+          <label class="custom-control-label" for="q6o3">It's support Object oriented programming
+            language
 
             <% if (foundResponse) { %>
             ✅
@@ -262,17 +258,17 @@
         <div class="custom-control custom-radio">
           <input type="radio" class="custom-control-input" id="q6o4" value="incorrect3" name="question6"
             <% if (q6ans == "incorrect3") { %> <%= pressRadio %> <% } %>>
-          <label class="custom-control-label" for="defaultGroupExample3">Option 3</label>
+          <label class="custom-control-label" for="q6o4">Light Weight Scripting language</label>
         </div>
 
       </div>
 
       <div class="form-group">
-        <label for="uname">Q.7 What is Deno ?</label>
+        <label for="uname" style="margin-top: 1%;">Q.7 Which one of the below is not an advantage of Deno?</label>
         <div class="custom-control custom-radio">
           <input type="radio" class="custom-control-input" id="q7o1" value="correct1" name="question7" required
             <% if (q7ans == "correct1") { %> <%= pressRadio %> <% } %>>
-          <label class="custom-control-label" for="defaultGroupExample1">Option 1
+          <label class="custom-control-label" for="q7o1">Less community support compared to Node
 
             <% if (foundResponse) { %>
             ✅
@@ -285,14 +281,14 @@
         <div class="custom-control custom-radio">
           <input type="radio" class="custom-control-input" id="q7o2" value="incorrect1" name="question7"
             <% if (q7ans == "incorrect1") { %> <%= pressRadio %> <% } %>>
-          <label class="custom-control-label" for="defaultGroupExample2">Option 2</label>
+          <label class="custom-control-label" for="q7o2">Security, to run app requires explicit permission</label>
         </div>
 
         <!-- Group of default radios - option 3 -->
         <div class="custom-control custom-radio">
           <input type="radio" class="custom-control-input" id="q7o3" value="incorrect2" name="question7"
             <% if (q7ans == "incorrect2") { %> <%= pressRadio %> <% } %>>
-          <label class="custom-control-label" for="defaultGroupExample3">Option 3</label>
+          <label class="custom-control-label" for="q7o3">Built in TS support</label>
         </div>
 
 
@@ -300,39 +296,32 @@
         <div class="custom-control custom-radio">
           <input type="radio" class="custom-control-input" id="q7o4" value="incorrect3" name="question7"
             <% if (q7ans == "incorrect3") { %> <%= pressRadio %> <% } %>>
-          <label class="custom-control-label" for="defaultGroupExample3">Option 3</label>
+          <label class="custom-control-label" for="q7o4">Permission are restricted</label>
         </div>
 
       </div>
 
       <div class="form-group">
-        <label for="uname">Q.5 What is Deno ?</label>
+        <label for="uname" style="margin-top: 1%;">Q.8 Cloud Run gives you the flexibility to run services on?</label>
         <div class="custom-control custom-radio">
-          <input type="radio" class="custom-control-input" id="q5o1" value="incorrect1" name="question8" required
+          <input type="radio" class="custom-control-input" id="q8o1" value="incorrect1" name="question8" required
             <% if (q8ans == "incorrect1") { %> <%= pressRadio %> <% } %>>
-          <label class="custom-control-label" for="defaultGroupExample1">Option 1</label>
+          <label class="custom-control-label" for="q8o1">Fully managed environment</label>
         </div>
 
         <!-- Group of default radios - option 2 -->
         <div class="custom-control custom-radio">
-          <input type="radio" class="custom-control-input" id="q5o2" value="incorrect2" name="question8"
+          <input type="radio" class="custom-control-input" id="q8o2" value="incorrect2" name="question8"
             <% if (q8ans == "incorrect2") { %> <%= pressRadio %> <% } %>>
-          <label class="custom-control-label" for="defaultGroupExample2">Option 2</label>
+          <label class="custom-control-label" for="q8o2">Anthos - GKE cluster or on-premises
+            workloads</label>
         </div>
 
         <!-- Group of default radios - option 3 -->
         <div class="custom-control custom-radio">
-          <input type="radio" class="custom-control-input" id="q5o3" value="incorrect3" name="question8"
-            <% if (q8ans == "incorrect3") { %> <%= pressRadio %> <% } %>>
-          <label class="custom-control-label" for="defaultGroupExample3">Option 3</label>
-        </div>
-
-
-        <!-- Group of default radios - option 3 -->
-        <div class="custom-control custom-radio">
-          <input type="radio" class="custom-control-input" id="q5o4" value="correct1" name="question8"
+          <input type="radio" class="custom-control-input" id="q8o3" value="correct1" name="question8"
             <% if (q8ans == "correct1") { %> <%= pressRadio %> <% } %>>
-          <label class="custom-control-label" for="defaultGroupExample3">Option 3
+          <label class="custom-control-label" for="q8o3">Both
 
             <% if (foundResponse) { %>
             ✅
@@ -341,28 +330,34 @@
           </label>
         </div>
 
+        <div class="custom-control custom-radio">
+          <input type="radio" class="custom-control-input" id="q8o4" value="incorrect3" name="question8"
+            <% if (q8ans == "incorrect3") { %> <%= pressRadio %> <% } %>>
+          <label class="custom-control-label" for="q8o4">None of the Above</label>
+        </div>
+
       </div>
 
       <div class="form-group">
-        <label for="uname">Q.5 What is Deno ?</label>
+        <label for="uname" style="margin-top: 1%;">Q.9 Why Deno is re-written in the Rust language over the Go language?</label>
         <div class="custom-control custom-radio">
           <input type="radio" class="custom-control-input" id="q9o1" value="incorrect1" name="question9" required
             <% if (q9ans == "incorrect1") { %> <%= pressRadio %> <% } %>>
-          <label class="custom-control-label" for="defaultGroupExample1">Option 1</label>
+          <label class="custom-control-label" for="q9o1">Open Source</label>
         </div>
 
         <!-- Group of default radios - option 2 -->
         <div class="custom-control custom-radio">
           <input type="radio" class="custom-control-input" id="q9o2" value="incorrect2" name="question9"
             <% if (q9ans == "incorrect2") { %> <%= pressRadio %> <% } %>>
-          <label class="custom-control-label" for="defaultGroupExample2">Option 2</label>
+          <label class="custom-control-label" for="q9o2">The simplicity of code</label>
         </div>
 
         <!-- Group of default radios - option 3 -->
         <div class="custom-control custom-radio">
           <input type="radio" class="custom-control-input" id="q9o3" value="correct1" name="question9"
             <% if (q9ans == "correct1") { %> <%= pressRadio %> <% } %>>
-          <label class="custom-control-label" for="defaultGroupExample3">Option 3
+          <label class="custom-control-label" for="q9o3">To avoid potential garbage collector issues
 
             <% if (foundResponse) { %>
             ✅
@@ -371,53 +366,39 @@
           </label>
         </div>
 
-
         <!-- Group of default radios - option 3 -->
         <div class="custom-control custom-radio">
           <input type="radio" class="custom-control-input" id="q9o4" value="incorrect3" name="question9"
             <% if (q9ans == "incorrect3") { %> <%= pressRadio %> <% } %>>
-          <label class="custom-control-label" for="defaultGroupExample3">Option 3</label>
+          <label class="custom-control-label" for="q9o4">Interoperability with C language</label>
         </div>
 
       </div>
 
       <div class="form-group">
-        <label for="uname">Q.10 What is Deno ?</label>
+        <label for="uname" style="margin-top: 1%;">Q.10 Can you easily switch from Cloud Run (Fully Managed) to Cloud Run for Anthos without
+          change in Application Code?</label>
         <div class="custom-control custom-radio">
-          <input type="radio" class="custom-control-input" id="q5o1" value="incorrect1" name="question10" required
+          <input type="radio" class="custom-control-input" id="q10o1" value="incorrect1" name="question10" required
             <% if (q10ans == "incorrect1") { %> <%= pressRadio %> <% } %>>
-          <label class="custom-control-label" for="defaultGroupExample1">Option 1</label>
+          <label class="custom-control-label" for="q10o1">False</label>
         </div>
 
         <!-- Group of default radios - option 2 -->
         <div class="custom-control custom-radio">
-          <input type="radio" class="custom-control-input" id="q5o2" value="correct1" name="question10"
+          <input type="radio" class="custom-control-input" id="q10o2" value="correct1" name="question10"
             <% if (q10ans == "correct1") { %> <%= pressRadio %> <% } %>>
-          <label class="custom-control-label" for="defaultGroupExample2">Option 2
+          <label class="custom-control-label" for="q10o2">True
 
             <% if (foundResponse) { %>
-             ✅ 
+            ✅
             <% } %>
         </div>
-
-        <!-- Group of default radios - option 3 -->
-        <div class="custom-control custom-radio">
-          <input type="radio" class="custom-control-input" id="q5o3" value="incorrect2" name="question10"
-            <% if (q10ans == "incorrect2") { %> <%= pressRadio %> <% } %>>
-          <label class="custom-control-label" for="defaultGroupExample3">Option 3</label>
-        </div>
-
-
-        <!-- Group of default radios - option 3 -->
-        <div class="custom-control custom-radio">
-          <input type="radio" class="custom-control-input" id="q5o4" value="incorrect3" name="question10"
-            <% if (q10ans == "incorrect3") { %> <%= pressRadio %> <% } %>>
-          <label class="custom-control-label" for="defaultGroupExample3">Option 3</label>
-        </div>
-
       </div>
 
-      <button type="submit" class="btn btn-success" <% if (foundResponse) { %> <%= disButton %> <% } %>>Submit</button>
+      <button type="submit" style="margin-top: 1%; width: 10%;" class="btn btn-success" <% if (foundResponse) { %> <%= disButton %> <% } %>>Submit</button>
+
+      <div style="margin-top: 10%;"></div>
     </form>
   </div>
 </body>
